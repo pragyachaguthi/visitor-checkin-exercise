@@ -87,11 +87,10 @@
 **Type:** Security/Functional  
 **Description:** Receptionists can access deactivation functionality, which should be restricted to administrators.  
 **Steps to Reproduce:**  
-1. Log in as receptionist.
-2. check the available routes with "rails routes " command. you will see decativation route.  
-3. Using Postman, send a PATCH request:  
-PATCH http://localhost:3000/api/visitors/<id>/deactivate
-4. Observe the response.  
+1. check the available routes with "rails routes " command. you will see decativation route.  
+2. Using Postman, send a PATCH request:  
+    PATCH http://localhost:3000/api/visitors/<id>/deactivate
+3. Observe the response. Response shows `"active": false`.
 **Expected Result:** Only administrators should be able to call the deactivation API. Receptionists should receive a "Forbidden" error.  
 **Actual Result:** Receptionists can successfully deactivate visitors via the API.  
 
@@ -103,12 +102,23 @@ PATCH http://localhost:3000/api/visitors/<id>/deactivate
 **Description:** After deactivation, visitors continue to appear in the active visitor list.  
 **Steps to Reproduce:**  
 1. Using Postman, send a PATCH request:  
-PATCH http://localhost:3000/api/visitors/<id>/deactivate
-
-→ Response shows `"active": false`.  
+    PATCH http://localhost:3000/api/visitors/<id>/deactivate,Response shows `"active": false`.  
 2. Fetch the active visitor list:  
-GET http://localhost:3000/api/visitors?page=1
-
+    GET http://localhost:3000/api/visitors?page=1
 3. Check if the deactivated visitor still appears.  
 **Expected Result:** Deactivated visitors should be excluded from the active list.  
 **Actual Result:** Deactivated visitors remain visible in the active list despite `"active": false`.  
+
+
+
+## Defect 10
+**Summary:** Next button disables after multiple checkouts  
+**Type:** Functional  
+**Description:** When a receptionist checks out multiple visitors on a paginated list, the “Next” button becomes disabled even though there are more pages of active visitors. This prevents navigation forward.  
+**Steps to Reproduce:**  
+1. Log in as receptionist.  
+2. Navigate to Active Visitors list with multiple pages.  
+3. On Page 3, check out multiple visitors.  
+4. Observe the pagination controls.  
+**Expected Result:** The “Next” button should remain enabled if subsequent pages contain active visitors.  
+**Actual Result:** The “Next” button becomes disabled, blocking navigation to later pages.  

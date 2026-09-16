@@ -271,3 +271,16 @@
 - Expected Result: next button deactivated.
 - Actual Result: next button deactivated.
 - Status: [fail]
+
+
+## TC-31 Verify Next button remains enabled after multiple checkouts
+Preconditions: 
+- Active Visitors list contains multiple pages of entries.  
+Steps:  
+  1. Navigate to the Active Visitors list.  
+  2. Go to  any page that is not the last.  
+  3. Select multiple visitors and click “Check Out” for each.  
+  4. Observe the pagination controls after checkout.  
+- Expected Result: The “Next” button remains enabled if subsequent pages still contain active visitors.  
+- Actual Result: The “Next” button becomes disabled, preventing navigation forward.  
+ Status:  [fail]
