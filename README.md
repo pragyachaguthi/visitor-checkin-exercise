@@ -37,3 +37,9 @@ The frontend runs on `http://localhost:5173`.
 - A visitor record can be deactivated by an administrator. Deactivated visitors must not appear in the active list and must not be selectable when registering a repeat visit.
 - The active visitor list is paginated at twenty records per page.
 - All times are displayed in the receptionist's local timezone.
+
+
+
+
+
+

@@ -59,7 +59,22 @@
 
 ---
 
-## Defect 6
+
+
+### DEFECT 6
+**summary:** The assessment requires admins to be able to deactivate visitor records. However, the current web application does not provide an admin panel or visible deactivation action.
+### Steps to Reproduce
+1. Confirm that a visitor is present in the Active Visitors list.
+2. Check the available actions for the visitor.
+3. Check whether an admin panel or deactivation action is available.
+### Expected Result
+An authorized admin should have a way to deactivate a visitor record.
+### Actual Result
+No admin panel or deactivation action is available in the web interface.
+
+
+
+## Defect 7
 **Summary:** Time zone mismatch  
 **Type:** Data  
 **Description:** The check-in time displayed does not match the receptionist’s local timezone (KTM).  
@@ -71,7 +86,7 @@
 
 ---
 
-## Defect 7
+## Defect 8
 **Summary:** Inconsistent required field validation  
 **Type:** Functional  
 **Description:** Both Full Name and Host fields are marked required, but when submitting with both empty, only the Full Name field shows the "Please fill out this form" message.  
@@ -82,7 +97,7 @@
 
 ---
 
-## Defect 8
+## Defect 9
 **Summary:** Deactivation not restricted to administrators  
 **Type:** Security/Functional  
 **Description:** Receptionists can access deactivation functionality, which should be restricted to administrators.  
@@ -96,7 +111,7 @@
 
 ---
 
-## Defect 9
+## Defect 10
 **Summary:** Deactivated visitors still appear in active list  
 **Type:** Functional  
 **Description:** After deactivation, visitors continue to appear in the active visitor list.  
@@ -111,7 +126,7 @@
 
 
 
-## Defect 10
+## Defect 11
 **Summary:** Next button disables after multiple checkouts  
 **Type:** Functional  
 **Description:** When a receptionist checks out multiple visitors on a paginated list, the “Next” button becomes disabled even though there are more pages of active visitors. This prevents navigation forward.  
